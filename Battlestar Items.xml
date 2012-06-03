@@ -1,0 +1,245 @@
+<?xml version="1.0" ?>
+<!DOCTYPE TranscendenceExtension
+
+[
+
+
+<!ENTITY itBaseStarArmor		"0xD25CEE32">
+<!ENTITY itBaseStarBulkhead             "0xD25CEE33">
+<!ENTITY itFusionReactor                   "0xD25CEE34">
+<!ENTITY itGalacticaArmor	        "0xD25CEE35">
+<!ENTITY itGalacticaBulkhead            "0xD25CEE36">
+<!ENTITY itTurboBlasterTurret               "0xD25CEE37">
+<!ENTITY itTyliumEnergizer                   "0xD25CEE38">
+
+<!ENTITY rsGalacticaArmor	        "0xD25CEE39">
+<!ENTITY rsGalacticaBulkhead	        "0xD25CEE3A">
+]>
+
+<TranscendenceExtension UNID="0xD25CEE31" version="0.98">
+
+
+<Image UNID="&rsGalacticaArmor;" bitmap="/BG/Armor.jpg" backColor="0x00000000"/>	
+<Image UNID="&rsGalacticaBulkhead;" bitmap="/BG/Bulkhead.jpg" backColor="0x00000000"/>
+
+
+<!-- Base Star Armor -->
+
+<ItemType UNID=      "&itBaseStarArmor;" 
+name=               "segment of Base Star armor" 
+level=              "8" 
+value=              "60000" 
+mass=               "5500" 
+modifiers=          "MinorItem; CannotOrder; Notforsale" 
+frequency=          "notrandom" 
+numberAppearing=    "1d4" 
+
+description= "Cylon Base Stars are very tough warships equipped with armor which is immune to both thermo and radiation." 
+
+firstPlural=        "true" 
+          
+         > 
+
+<Image imageID="&rsGalacticaArmor;" imageX="0" imageY="0" imageWidth="100" imageHeight="100"/> 
+
+<Armor 
+
+hitPoints=          "650" 
+repairTech=         "8" 
+repairCost=         "8" 
+installCost=        "700"
+
+radiationImmune=    "true"
+thermoImmune=       "true"
+
+/> 
+
+</ItemType>
+
+<!-- Base Star Bulkhead Armor -->
+
+<ItemType UNID=     "&itBaseStarBulkhead;" 
+name=              "segment of Base Star bulkhead" 
+level=             "8" 
+value=             "65000" 
+mass=              "5500" 
+modifiers=         "MinorItem; CannotOrder; Notforsale" 
+frequency=         "notrandom" 
+numberAppearing=   "1d4" 
+
+description= "Twice as thick as regular Cylon armor, the bulkhead was designed to take heavy abuse before breaching." 
+
+firstPlural=       "true" 
+          
+         > 
+
+<Image imageID="&rsGalacticaBulkhead;" imageX="0" imageY="0" imageWidth="100" imageHeight="100"/> 
+
+<Armor 
+
+hitPoints=         "750" 
+repairTech=        "8" 
+repairCost=        "8" 
+installCost=       "850" 
+
+radiationImmune=    "true"
+thermoImmune=       "true"
+
+/> 
+
+</ItemType>
+
+<!-- Fusion Reactor -->
+
+<ItemType UNID="&itFusionReactor;"
+name=		"Fusion Reactor"
+level=		"7"
+value=		"15000"
+frequency=	"rare"
+mass=		"1"
+modifiers=	"MajorItem"
+
+description= "A highly efficient fusion reactor with a maximum output of 600 MW."
+		>
+
+<Image imageID="&rsItems1;" imageX="288" imageY="288" imageWidth="96" imageHeight="96"/>
+	
+<ReactorDevice
+
+maxPower=	"600000"
+fuelEfficiency=	"1000"
+maxFuel=	"80000"
+minFuelTech=	"5"
+maxFuelTech=	"10"
+			/>
+</ItemType>
+
+<!-- Galactica Armor -->
+
+<ItemType UNID=      "&itGalacticaArmor;" 
+name=               "segment of Galactica armor" 
+level=              "8" 
+value=              "60000" 
+mass=               "5500" 
+modifiers=          "MinorItem; CannotOrder; Notforsale" 
+frequency=          "notrandom" 
+numberAppearing=    "1d4" 
+
+description= "Battlestars are very tough warships, even the Galactica that was going to be decommissioned has armor which is immune to nuclear attack." 
+
+firstPlural=        "true" 
+          
+> 
+
+<Image imageID="&rsGalacticaArmor;" imageX="0" imageY="0" imageWidth="100" imageHeight="100"/> 
+
+<Armor 
+
+hitPoints=          "600" 
+repairTech=         "8" 
+repairCost=         "8" 
+installCost=        "750" 
+
+radiationImmune=    "true"
+positronImmune=     "true"
+
+/> 
+
+</ItemType>
+
+<!-- Galactica Bulkhead -->
+
+<ItemType UNID=      "&itGalacticaBulkhead;" 
+name=               "segment of Galactica bulkhead" 
+level=              "8" 
+value=              "60000" 
+mass=               "5000" 
+modifiers=          "MinorItem; CannotOrder; Notforsale" 
+frequency=          "notrandom" 
+numberAppearing=    "1d4" 
+
+description= "This bulkhead armor was designed to protect capital ships and stations from heavy abuse and cosmic radiation." 
+
+firstPlural=        "true" 
+          
+> 
+
+<Image imageID="&rsGalacticaBulkhead;" imageX="0" imageY="0" imageWidth="100" imageHeight="100"/> 
+
+<Armor 
+
+hitPoints=          "700" 
+repairTech=         "8" 
+repairCost=         "8" 
+installCost=        "800" 
+
+radiationImmune=    "true"
+positronImmune=     "true"
+            /> 
+
+</ItemType>
+
+<!-- Turbo Blaster Turret-->
+
+<ItemType UNID="&itTurboBlasterTurret;"
+name=	            "Turbo Blaster Turret"
+level=	            "8"
+value=	            "40000"
+mass=	            "9000"
+frequency=	    "rare"
+modifiers=	    "EnergyWeapon; MajorItem; Military"
+
+description= "Turbo Blaster Turrets are used by capital ships to inflict heavy damage."
+>
+
+<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+<Weapon
+configuration=	        "spread4"
+omnidirectional=	"true"
+multiTarget=		"true"
+powerUse=		"500"
+				
+type=			"beam"
+damage=			"particle:40; WMD1"
+fireRate=		"15"
+lifetime=		"30"
+
+beamType=		"laser"
+primaryColor=		"0x5f, 0xf1, 0x2a"
+secondaryColor=		"0x00, 0xff, 0x00"
+sound=			"&snLaserCannon;"
+>
+
+</Weapon>
+
+</ItemType>
+
+<!-- Tylium Energizer  -->
+
+<ItemType UNID="&itTyliumEnergizer;"
+name=		"Tylium Energizer"
+level=		"8"
+value=		"5000"
+mass=		"1000"
+frequency=		"uncommon"
+modifiers=		"MajorItem"
+
+description=    "The tylium energizer provide an alternate means of powering ships."
+>
+
+<Image imageID="&rsItems1;" imageX="288" imageY="288" imageWidth="96" imageHeight="96"/>
+
+<ReactorDevice
+
+maxPower=	"400000"
+fuelEfficiency=	"400"
+maxFuel=	"90000"
+minFuelTech=	"3"
+maxFuelTech=	"10"
+
+/>
+
+</ItemType>
+
+</TranscendenceExtension>

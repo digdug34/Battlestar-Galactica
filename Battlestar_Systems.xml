@@ -1,0 +1,590 @@
+<?xml version="1.0" ?>
+<!DOCTYPE TranscendenceAdventure
+[
+	<!ENTITY BattleStarGalacticaMod     "0xDCBA0000">
+	<!ENTITY bsg_TravelStation1			"0xDCBA0001">
+	<!ENTITY bsg_TravelStation2			"0xDCBA0002">
+	<!ENTITY bsg_Stargate   			"0xDCBA0003">
+    <!ENTITY adBSGDesc					"0xDCBA0004">
+    <!ENTITY ssSimple					"0xDCBA0005">
+	<!ENTITY ssCaprica				    "0xDCBA0006">
+	<!ENTITY bsg_asteroid_Unknown       "0xDCBA0007">
+	<!ENTITY bsg_asteroid_ore           "0xDCBA0008">
+	<!ENTITY bsg_itRoidScanner          "0xDCBA0009">
+    
+    
+	<!ENTITY scMiningShip			        "0xD25CEE26">
+]>
+<TranscendenceAdventure UNID="&BattleStarGalacticaMod;" version="1.0" name="BSG" credits="Digdug, Prophet">	
+<!-----------------------------------------------------------------------------------------------------------
+                                                Index
+
+    Adventure code
+    Topology nodes
+    Systems
+    Background travel stations
+    Invisible stargate
+    mineable asteroids
+    
+----------------------------------------------------------------------------------------------------------->
+<!---       Adventure code      --->
+
+	<AdventureDesc
+			unid=			"&adBSGDesc;"
+			name=			"Battlestar Galactica mod"
+			startingShipCriteria= "* +bgalactica"
+			backgroundID=	"&rsPart1Cover;"
+			>
+		<Events>
+			<OnGameStart>
+				(block Nil
+					(gamSetCrawlImage &rsProlog1;)
+					(gamSetCrawlText (cat
+						"In space, no one can hear you scream..."
+						))
+					)
+			</OnGameStart>
+
+			<OnGameEnd>
+				(block Nil
+					(gamSetCrawlImage
+						(if (eq aEndGameReason 'leftHumanSpace)
+							&rsEndGameEscaped;
+							&rsEndGameDestroyed;
+							)
+						)
+
+					(gamSetCrawlText 
+						(plyComposeString gPlayer
+							(cat
+								"%name% " aEpitaph ". "
+								"%name% visited "
+								(if (eq aSystemsVisited 1)
+									"a single star system "
+									(cat aSystemsVisited " star systems ")
+									)
+								"and destroyed "
+								(switch
+									(or (eq aEnemiesDestroyed 0) (not aBestEnemyClass))
+										"no enemy ships"
+
+									(eq aEnemiesDestroyed aBestEnemiesDestroyed)
+										(if (eq aEnemiesDestroyed 1)
+											(shpGetClassName aBestEnemyClass 0x04)
+											(cat aEnemiesDestroyed " " (shpGetClassName aBestEnemyClass 0x02))
+											)
+
+									(eq aBestEnemiesDestroyed 1)
+										(cat aEnemiesDestroyed " enemy ships, including " (shpGetClassName aBestEnemyClass 0x04))
+
+									(cat aEnemiesDestroyed " enemy ships, including " aBestEnemiesDestroyed " " (shpGetClassName aBestEnemyClass 0x02))
+									)
+								". "
+								(if (eq aEndGameReason 'leftHumanSpace)
+									"\n\nreached new Caprica and saved the human race."
+									"%He% did not escape the cylons."
+									)
+								)
+							)
+						)
+					)
+			</OnGameEnd>
+		</Events>
+	</AdventureDesc>
+	
+	<SystemTopology>
+
+		<!-- LEVEL I -->
+
+		<Node ID="SE" rootNode="true">
+			<System 
+					name=			"Caprica"
+					level=			"1"
+					attributes=		"newBeyond"
+					>
+				<System UNID="&ssCaprica;"/>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Outbound" DestID="B" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<Node ID="B">
+			<System
+					UNID=				"&ssSimple;"
+					name=				"simpleb"
+					level=				"1"
+					attributes=			"outerRealm"
+					/>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="C" DestGate= "Inbound" />
+			</StarGates>
+		</Node>
+
+		<Node ID="C">
+			<System
+					UNID=				"&ssSimple;"
+					name=				"simplec"
+					level=				"1"
+					attributes=			"outerRealm"
+					/>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="D" DestGate= "Inbound" />
+			</StarGates>
+		</Node>
+
+		<Node ID="D">
+			<System
+					UNID=				"&ssSimple;"
+					name=				"simpleD"
+					level=				"1"
+					attributes=			"outerRealm"
+					/>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="G2" DestGate= "Inbound" />
+			</StarGates>
+		</Node>
+	
+		<Node ID="G2">
+			<System
+					UNID=				"&ssHeretic;"
+					name=				"Heretic"
+					level=				"10"
+					attributes=			"outerRealm"
+					/>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="EndGame" DestID="EndGame"/>
+			</StarGates>
+		</Node>
+
+		<Node	ID="EndGame"
+				endGame="true"
+				endGameReason="leftHumanSpace"
+				epitaph="left Human Space on a journey to the Galactic Core"
+				>
+		</Node>
+
+
+	</SystemTopology>	
+	
+<!----------------------------------------------------------------------------------------------           
+                                        Star systems
+------------------------------------------------------------------------------------------------>	
+	
+	<SystemType UNID="&ssCaprica;" noRandomEncounters="true">
+
+        <Tables>
+            <AsteroidSmall>
+				<Table>
+					<Station chance="90" type="&stSmallAsteroid;"/>
+					<Station chance="10" type="&bsg_asteroid_Unknown;"/>
+				</Table>
+            </AsteroidSmall>
+            <AsteroidMedium>
+				<Table>
+					<Station chance="90" type="&stMediumAsteroid;"/>
+					<Station chance="10" type="&bsg_asteroid_Unknown;"/>
+				</Table>
+            </AsteroidMedium>
+			<AsteroidGroupArc>
+				<Group>
+					<Siblings count="1d20" arcInc="2d85-86" radiusInc="-4-4">
+						<Lookup table="AsteroidSmall"/>
+					</Siblings>
+					<Siblings count="1d20" arcInc="2d65-66" radiusInc="-6-6">
+						<Lookup table="AsteroidSmall"/>
+					</Siblings>
+					<Siblings count="1d20" arcInc="2d45-46" radiusInc="-8-8">
+						<Lookup table="AsteroidSmall"/>
+					</Siblings>
+					<Siblings count="1d20" arcInc="2d25-26" radiusInc="-12-12">
+						<Lookup table="AsteroidSmall"/>
+					</Siblings>
+					<Siblings count="1d5-1" arcInc="2d15-16" radiusInc="-16-16">
+						<Lookup table="AsteroidMedium"/>
+					</Siblings>
+				</Group>
+			</AsteroidGroupArc>
+        </Tables>
+        
+		<SystemGroup>
+			<Station type="&stRedDwarfStar;" name="Caprisun"/>            
+
+        <!---   Caprica     --->
+            <Orbitals distance="300" angle="random" eccentricity="1d10+20" rotation="random">
+                <Group>
+                    <Station 
+                        type="&stBiospherePlanet;" 
+                        name="Caprica"
+                        showOrbit="true"
+                        />
+                        <Orbitals distance="20" angle="random">
+                            <Group>
+                                <Orbitals distance="12" angle="random">
+                                    <Group>
+                                        <Marker objName="Start"/>
+                                    </Group>
+                                </Orbitals>
+              <!---   Place the stargate around caprica     --->
+                                <Orbitals distance="15" angle="random">
+                                    <Stargate objName="Outbound" type="&bsg_Stargate;"/>
+                                </Orbitals>
+                            </Group>
+                        </Orbitals>
+                        <Orbitals distance="30" angle="random" >
+                            <Station type="&stCrateredPlanet;"
+                                name="CapriMoon"
+                                showOrbit="true"
+                                />
+                        </Orbitals>
+                        <Trojan>
+                            <Lookup table="AsteroidGroupArc"/>
+                        </Trojan>
+                        <AntiTrojan>
+                            <Lookup table="AsteroidGroupArc"/>
+                        </AntiTrojan>
+                </Group>
+            </Orbitals>
+		</SystemGroup>
+	</SystemType>
+
+<!---   Generic place holder system   --->
+
+	<SystemType UNID="&ssSimple;" noRandomEncounters="true">
+        <Tables>
+        </Tables>
+		<SystemGroup>
+			<!-- Star -->
+			<Station type="&stA-TypeStar;" name="Simple"/>
+			<Orbitals distance="1" scale="light-minute" angle="random">
+				<Group>
+					<Station type="&bsg_asteroid_unknown;" showOrbit="true" />
+            <!---   Place the two stargates     
+                    Note: We use the custom stargates so they are invisible.
+            --->
+					<Orbitals distance="2" angle="random">
+						<Stargate objName="Inbound" type="&bsg_Stargate;"/>
+					</Orbitals>
+					<Orbitals distance="5" angle="random">
+						<Stargate objName="Outbound" type="&bsg_Stargate;"/>
+					</Orbitals>
+				</Group>
+			</Orbitals>
+		</SystemGroup>
+	</SystemType>
+
+
+
+
+<!-----------------------------------------------------------------------------------------------------------------
+      Background Travel stations       
+        Usage notes:
+            This station checks data in the playership under the variable name "Dest" as a system node to gate to.
+            This could be expanded so that the var "Dest" is a list with a NodeID and a marker name to allow travel
+            within a system.  Currently the travel stations will warp the ship to the outbound gate only.
+--------------------------------------------------------------------------------------------------------------------->
+
+	<StationType UNID="&bsg_TravelStation1;" backgroundObject="true" virtual="true">
+		<Events>
+			<OnGlobalSystemCreated>
+				(sysCreateStation &bsg_TravelStation2; '(0 0 0 0))
+			</OnGlobalSystemCreated>
+		</Events>
+	</StationType>
+
+	<StationType UNID="&bsg_TravelStation2;" backgroundObject="true" virtual="true">
+		<Events>
+            ;; here we init the vars used by the transportation system
+            ;; and set up the recurring check event
+            <OnCreate>
+                (block nil
+                    (objSetData gPlayerShip "Dest" Nil)
+                    (sysAddObjTimerEvent 5 gSource 'scan)
+					(sysAddObjRecurringTimerEvent 30 gSource 'check)
+                )
+            </OnCreate>
+            ;; initial scan to check any other ships or stations that we might need later
+            <Scan>
+                (block Nil
+                    ;; register the playership for events
+                    (if (not (objGetData gplayership 'regd))
+                        (block nil
+                            (objSetData gPlayerShip 'regd True)
+                            (objRegisterForEvents gSource gPlayership)
+                        )
+                    )
+                    ;; add some debug items
+                    (objAddItem gPlayerShip (itmCreate &bsg_itRoidScanner; 1))
+                )
+            </Scan>
+            ;; register the player and mark that it's been done
+            <OnPlayerEnteredSystem>
+                (if (not (objGetData gPlayerShip 'regd))
+                    (block Nil
+                        (objSetData gPlayerShip 'regd True)
+                        (objRegisterForEvents gSource gPlayerShip)
+                    )
+                )
+            </OnPlayerEnteredSystem>
+            ;; unreg and unmark so the next travel station can take over
+            <OnPlayerLeftSystem>
+                (objSetData gPlayerShip 'regd Nil)
+            </OnPlayerLeftSystem>
+            
+            ;;  the recurring event to check conditions for if/when we should be traveling
+            <Check>
+                (block ((dest (objGetData gPlayerShip "Dest")))
+                    (switch
+                        ;;
+                        ;; if dest is set begin spooling FTL drive
+                        ;; This event should be used to check the victory conditions for the particular level
+                        ;; and either gate automatically or possibly display a dockscreen and provide the option 
+                        ;; to gate/jump/warp when ready.
+                        ;; 
+                        dest
+                            (objFireEvent gSource "Travel")
+                    )
+                )
+            </Check>
+            ;; this could be more creative and follow the lines of my stellar cartography mod where there's an entire sequence
+            ;; of events to play out an animation and finally gate the entire fleet to the new destination.
+            <Travel>
+                (block ((dest (objGetData gPlayerShip "Dest")))
+                    (objSetData gPlayerShip "dest" Nil)
+                    (objGateTo gplayership dest 'Outbound &efStargateOut;)
+                )
+            </Travel>
+        </Events>
+    </StationType>
+
+
+<!---         New totally invisible Stargate     --->
+
+	<StationType UNID="&bsg_Stargate;"
+			name=				"(stargate)"
+			sovereign=			"&svIndependent;"
+			multiHull=			"true"
+			immutable=			"true"
+            noMapLabel=         "true"
+            noMapIcon=          "true"
+            scale=              "world"
+			definiteArticle=	"true"
+			>
+		<Image imageID="&rsStargate;" imageX="0" imageY="0" imageWidth="1" imageHeight="1"/>
+	</StationType>
+
+	
+	<!-- new asteroids 
+    This asteroid is completely mundane save for it's events this is to prevent it from being reconned and it will not
+    be revealed until it is scanned by a raptor.  The asteroid checks itself for data named "scanned"
+    and if found, will spawn an identical asteroid that has all the necessary features for resource collection.
+    -->
+
+    
+	<StationType UNID="&bsg_asteroid_unknown;"
+		name=				"(medium ore asteroid)"
+		scale=				"world"
+		sovereign=			"&svIndependent;"
+		attributes=			"asteroid, stoneAsteroid, ore, unknown"
+		ejectaType=			"&vtStoneAsteroidEjecta;"
+		>
+
+		<Names noArticle="true">Asteroid %1%0%0%0%0%0</Names>
+
+		<ImageVariants>
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="0"   imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="64"  imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="128" imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="192" imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="256" imageWidth="64" imageHeight="64"/>
+
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="320" imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="384" imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="448" imageWidth="64" imageHeight="64"/>
+		</ImageVariants>
+
+		<Events>
+            <OnCreate>
+                (sysaddobjrecurringtimerevent 55 gSource "Check")
+            </OnCreate>
+			<Check>
+                (block Nil
+                    (if (objGetData gSource "Scanned")
+                        (block (roid)
+                            ;; spawn the resource asteroid
+                            (setq roid (sysCreateStation &bsg_asteroid_ore; (objGetpos gSource)))
+                            ;; make the names match
+                            (objSetName roid (objGetName gsource 0))
+                            ;; make the image match
+                            (staSetImageVariant roid (staGetImageVariant gSource))
+                            ;; this might be able to be removed, but could be used for the raptors
+                            ;; to estimate the worth of the ore inside the asteroid before the switch is made
+                            (objSetData roid "ore" (eval (objGetStaticData gSource "ore")))
+                            ;; we can cancel the timer now that the switch has been made
+                            (sysCancelTimerEvent gSource "Check")
+                        )
+                    )
+                )
+			</Check>
+		</Events>
+        
+        <StaticData>
+            <Ore>
+                (random 20000 30000)
+            </Ore>
+        </StaticData>
+
+	</StationType>
+    
+<!---   This is the asteroid that can be mined from, it is dockable, has a map icon, a dockscreen 
+        and the events and data necessary for the mining ships to extract resources from it
+--->
+	<StationType UNID="&bsg_asteroid_ore;"
+		name=				"(medium ore asteroid)"
+		sovereign=			"&svPlayer;"
+        dockScreen=			"Main"
+        abandonedScreen=	"&dsAbandonedStation;"
+        dockingPorts=		"8"
+		immutable=			"true"
+		attributes=			"asteroid, stoneAsteroid, ore, known"
+		ejectaType=			"&vtStoneAsteroidEjecta;"
+		>
+
+		<ImageVariants>
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="0"   imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="64"  imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="128" imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="192" imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="256" imageWidth="64" imageHeight="64"/>
+
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="320" imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="384" imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="448" imageWidth="64" imageHeight="64"/>
+		</ImageVariants>
+
+		<DockScreens>
+			<Main name= "=(objGetName gSource)" >
+				<Panes>
+					<Default>
+						<Initialize>
+                            (block (desc)
+                                (setq desc (cat "You are docked with an asteroid that is rich in ore."
+                                    "\n\nIntensive scans show that there is approximately "
+                                    (objGetData gSource "Ore")
+                                    " tons of ore that is extractable."
+                                ))
+                                (scrSetDesc gScreen desc)
+                                
+                                (scrEnableAction gScreen 0 (not (objGetData gSource "MiningInit")))
+                            )
+						</Initialize>
+						<Actions>
+                            <Action name="Begin mining operations" key="B" default="1">
+                                (block (theShip)
+                                    (setq theShip (sysCreateShip 
+                                        &scMiningShip; 
+                                        (sysVectorRandom (objGetPos gSource) 30 12 "*")
+                                        &svPlayer;
+                                        "Fleet")
+                                    )
+                                    (objSetObjRefData gSource "Miner" theShip)
+                                    (shpOrder theShip 'Dock gSource)
+                                    (objRegisterForEvents gSource theShip)
+                                    (scrSetDesc gScreen "The mining ship is moving into position and will begin mining ore A.S.A.P.")
+                                    (objSetData gSource "MiningInit" True)
+                                )
+                            </Action>
+                            <Action name="Undock" key="U" cancel="1">
+                                <Exit/>
+                            </Action>
+                        </Actions>
+                    </Default>
+                </Panes>
+            </Main>
+        </Dockscreens>
+
+        <Events>
+            <OnObjDocked>
+                (block ((theMiner (objGetObjRefData gSource "Miner")))
+                    (switch 
+                        (and (eq aObjDocked theMiner) (gr (objGetData gSource "Ore") 0))
+                            (block (msg)
+                                (setq msg (cat "Mining operations at "(objGetNAme gSource)" have begun."))
+                                (plyMessage gPlayer msg)
+                                (sysAddObjRecurringTimerEvent 90 gSource "Mining")
+                            )
+                        (and (eq aObjDocked theMiner) (leq (objGetData gSource "Ore") 0))
+                            (block (msg)
+                                (setq msg (cat (objGetName theMiner 1)" is unable to extract any more ore from "(objgetname gSource)))
+                                (plyMessage gPlayer msg)
+                                (shpCancelOrders theMiner)
+                                (shpOrder theMiner 'escort gplayership 10)
+                            )
+                    )
+                )
+            </OnObjDocked>
+            <Mining>
+                (block ((theMiner (objGetObjRefData gSource "Miner")))
+                    (switch
+                        (and (objIsDockedAt theMiner gSource) (gr (objGetData gSource "Ore") 0))
+                            (block (amt)
+                                (setq amt (rollDice 10 10))
+                                (objIncData gSource "Ore" (multiply amt -1))
+                                (objIncData theMiner "Ore" amt)
+                            )
+                        (leq (objGetData gSource "Ore") 0)
+                            (block (msg)
+                                (setq msg (cat (objGetName theMiner 1)" is unable to extract any more ore from "(objgetname gSource)))
+                                (plyMessage gPlayer msg)
+                                (shpCancelOrders theMiner)
+                                (shpOrder theMiner 'escort gplayership 10)
+                            )
+                        (not (objIsDockedAt theMiner gSource))
+                            (sysCancelTimerEvent gSource "Mining")
+                    )
+                )
+            </Mining>
+		</Events>
+
+		<DockingPorts>
+			<Port x="0"	    y="10" />
+			<Port x="0"	    y="-10" />
+			<Port x="10"	y="0" />
+			<Port x="10"	y="10" />
+			<Port x="10"	y="-10" />
+			<Port x="-10"	y="0" />
+			<Port x="-10"	y="10" />
+			<Port x="-10"	y="-10" />
+		</DockingPorts>
+	</StationType>
+    
+<!----------------------------------------------------------------------------------------------
+                                    Debug and testing items   
+----------------------------------------------------------------------------------------------->
+    
+	<ItemType UNID="&bsg_itRoidScanner;"
+			name=				"asteroid scanner"
+			level=				"1"
+			value=				"1"
+			frequency=			"notRandom"
+			virtual=			"True"
+			numberAppearing=	"1"
+			mass=				"1"
+			modifiers=			"MajorItem; notForSale"
+			description=		"Find asteroids that can be mined."
+			>
+		<Image imageID="&rsItems1;" imageX="192" imageY="288" imageWidth="96" imageHeight="96"/>
+		<Invoke>
+			(enum (sysFindObject nil "t:asteroid") theRoid (objSetData theRoid "Scanned" True))
+		</Invoke>
+	</ItemType>
+</TranscendenceAdventure>

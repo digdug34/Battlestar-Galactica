@@ -1,0 +1,2293 @@
+<?xml version="1.0" ?>
+<!DOCTYPE TranscendenceExtension
+[
+	<!ENTITY unidExtension				"0xD25CEE00">
+	
+	<!ENTITY rsShips48					"0xD25CEE04">
+	<!ENTITY rsShips64					"0xD25CEE05">
+	<!ENTITY rsShips100					"0xD25CEE06">
+	<!ENTITY rsShips120					"0xD25CEE07">
+	<!ENTITY rsShips160					"0xD25CEE08">
+	<!ENTITY rsShips192					"0xD25CEE09">
+	<!ENTITY rsShips256					"0xD25CEE0A">
+	
+	<!ENTITY scRaider					"0xD25CEE0B">
+	<!ENTITY scTurret					"0xD25CEE0C">
+	<!ENTITY scRaptor					"0xD25CEE0D">
+	<!ENTITY scRaptor2					"0xD25CEE0E">
+	<!ENTITY scViper					"0xD25CEE0F">
+	<!ENTITY scViper7					"0xD25CEE10">
+	
+	<!ENTITY scBomber				    	"0xD25CEE11">
+	<!ENTITY scColonialOne					"0xD25CEE12">
+	<!ENTITY scHeavyRaider					"0xD25CEE13">
+	<!ENTITY scStorageShuttle				"0xD25CEE14">
+	<!ENTITY scGemenonTraveler				"0xD25CEE15">
+	
+	<!ENTITY scPanGalactic1    				"0xD25CEE16">
+	<!ENTITY scPanGalactic2	    			"0xD25CEE17">
+	<!ENTITY scPanGalactic3	    			"0xD25CEE18">
+	<!ENTITY scPanGalactic4	    			"0xD25CEE19">
+	<!ENTITY scPanGalactic5	    			"0xD25CEE1A">
+	<!ENTITY scOlympicCarrier				"0xD25CEE1B">
+	<!ENTITY scFlatTop        				"0xD25CEE1C">
+	<!ENTITY scGeminiFreighter				"0xD25CEE1D">
+	<!ENTITY scColonialMovers				"0xD25CEE1E">
+	<!ENTITY scPylonShip				    "0xD25CEE1F">
+	
+	<!ENTITY scAstralQueen				    "0xD25CEE20">
+	<!ENTITY scCelestra				        "0xD25CEE21">
+	<!ENTITY scRefineryShip				    "0xD25CEE22">
+	<!ENTITY scTubeShip				        "0xD25CEE23">
+	
+	<!ENTITY scBotanicalShip		        "0xD25CEE24">
+	<!ENTITY scDefender				        "0xD25CEE25">
+	<!ENTITY scMiningShip			        "0xD25CEE26">
+	
+	<!ENTITY scGalactica			        "0xD25CEE27">
+	<!ENTITY scBasestarOld			        "0xD25CEE28">
+	<!ENTITY scZephyr    			        "0xD25CEE29">
+	<!ENTITY scCloudNine			        "0xD25CEE2A">
+	
+	<!ENTITY scPegasus    			        "0xD25CEE2B">
+	<!ENTITY scBasestar    			        "0xD25CEE2C">
+	
+	<!ENTITY scResurrectionShip		        "0xD25CEE2D">
+	<!ENTITY scResurrectionHub		        "0xD25CEE2E">
+	<!ENTITY scDemetriusSewageShip	        "0xD25CEE2F">
+	<!ENTITY scGideonSupplyShip		        "0xD25CEE30">
+	
+	<!ENTITY rsArmour		                "0xD25CEE31">
+	
+]>
+<TranscendenceExtension UNID="&unidExtension;" version="0.99c">	
+
+<Image UNID="&rsShips48;"	bitmap="BG/ships48.jpg"		bitmask="BG/ships48 mask.bmp"/>
+<Image UNID="&rsShips64;"	bitmap="BG/ships64.jpg"		bitmask="BG/ships64 mask.bmp"/>
+<Image UNID="&rsShips100;"	bitmap="BG/ships100.jpg"		bitmask="BG/ships100 mask.bmp"/>
+<Image UNID="&rsShips120;"	bitmap="BG/ships120.jpg"		bitmask="BG/ships120 mask.bmp"/>
+<Image UNID="&rsShips160;"	bitmap="BG/ships160.jpg"		bitmask="BG/ships160 mask.bmp"/>
+<Image UNID="&rsShips192;"	bitmap="BG/ships192.jpg"		bitmask="BG/ships192 mask.bmp"/>
+<Image UNID="&rsShips256;"	bitmap="BG/ships256.jpg"		bitmask="BG/ships256 mask.bmp"/>
+<Image UNID="&rsArmour;"	bitmap="BG/projectarmour.bmp" backColor="0x00000000"/>
+
+
+	
+	<ShipClass UNID="&scRaider;"
+		manufacturer=		"Cylon"
+		class=				"Raider"
+		type=				"gunship"
+		score=				"225"
+		techOrder=			"biomech"
+rotationCount=		"40"
+		mass=				"20"
+		cargoSpace=			"35"
+		thrust=				"200"
+		maneuver=			"3"
+		maxSpeed=			"25"
+
+		leavesWreck=		"20"
+
+		attributes=			"bgalactica,genericClass"
+		>
+
+	<Armor>
+		<ArmorSection start="315" span="90" armorID="&itLightPlasteelPlate;" areaSet="0,2" />
+		<ArmorSection start="225" span="90" armorID="&itLightPlasteelPlate;" areaSet="3,4" />
+		<ArmorSection start="135" span="90" armorID="&itLightPlasteelPlate;" areaSet="1,6" />
+		<ArmorSection start="45"  span="90" armorID="&itLightPlasteelPlate;" areaSet="7,13" />
+	</Armor>
+
+	<Devices>
+		<Device deviceID="&itDualLaserCannon;"/>
+		<Device deviceID="&itNAMIMissileLauncher;"/>
+		
+	</Devices>
+
+	<Items>
+		<Item count="1d6" item="&itHelium3FuelRod;"/>
+		<Item count="4d6" item="&itKM100Missile;"/>
+	</Items>
+
+	<AISettings
+		fireRateAdj=		"30"
+		fireAccuracy=		"90"
+		perception=			"4"
+		/>
+
+	<Image imageID="&rsShips48;" imageX="0" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+	<DriveImages>
+		<NozzleImage imageID="&rsDriveExhaust;" imageX="48" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+		<NozzlePos x="-41" y="-8"/>
+		<NozzlePos x="-41" y="0"/>
+		<NozzlePos x="-41" y="8"/>
+	</DriveImages>
+
+</ShipClass>
+	
+	<ShipClass UNID="&scTurret;"
+			manufacturer=		""
+			class=				"Turret"
+			type=				""
+			score=				"800"
+			techOrder=			"biomech"
+			rotationCount=		"40"
+			mass=				"400"
+			cargoSpace=			"0"
+			thrust=				"0"
+			maneuver=			"3"
+			maxSpeed=			"0"
+
+			leavesWreck=		"50"
+
+			attributes=			"bgalactica,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="315" span="90" armorID="&itLightTharsisPlate;" areaSet="0,2" />
+			<ArmorSection start="225" span="90" armorID="&itLightTharsisPlate;" areaSet="3,4" />
+			<ArmorSection start="135" span="90" armorID="&itLightTharsisPlate;" areaSet="1,6" />
+			<ArmorSection start="45"  span="90" armorID="&itLightTharsisPlate;" areaSet="7,13" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itAresArchcannon;" minFireArc="350" maxFireArc="10" />
+		</Devices>
+
+		<Image imageID="&rsShips48;" imageX="48" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"40"
+			fireAccuracy=		"90"
+			perception=			"4"
+
+			noFriendlyFire=		"true"
+			/>
+
+	</ShipClass>
+
+		<ShipClass UNID="&scRaptor;"
+			manufacturer=		""
+			class=				"Raptor"
+			type=				""
+			score=				"675"
+			techOrder=			"mech"
+			rotationCount=		"40"
+			mass=				"200"
+			cargoSpace=			"50"
+			thrust=				"1000"
+			maneuver=			"4"
+			maxSpeed=			"22"
+
+			leavesWreck=		"50"
+
+			attributes=			"bgalactica,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="315" span="90" armorID="&itCeralloyArmor;" areaSet="0,2" />
+			<ArmorSection start="225" span="90" armorID="&itCeralloyArmor;" areaSet="3,4" />
+			<ArmorSection start="135" span="90" armorID="&itCeralloyArmor;" areaSet="1,6" />
+			<ArmorSection start="45"  span="90" armorID="&itCeralloyArmor;" areaSet="7,13" />
+			</Armor>
+
+		<Devices>
+			<Device deviceID="&itDragonflyMissileSystem;"/>
+			<Device deviceID="&itMAGLauncher;" secondaryWeapon="true" minFireArc="330" maxFireArc="30" posAngle="0" posRadius="16"/>
+		
+			</Devices>
+
+		<Items>
+			<Item count="20d6" item="&itDragonflyCartridge;"/>
+			<Item count="20d6" item="&it800HexageneMAG;"/>
+			<Item count="2d6" item="&itHeliumAssembly;"/>
+			</Items>
+
+		<Image imageID="&rsShips48;" imageX="96" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"25"
+			fireAccuracy=		"85"
+			perception=			"4"
+			/>
+
+		<DriveImages>
+			<NozzleImage imageID="&rsDriveExhaust;" imageX="48" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+			<NozzlePos x="-42" y="5"/>
+			<NozzlePos x="-42" y="-5"/>
+			</DriveImages>
+
+		</ShipClass>
+		
+			<ShipClass UNID="&scRaptor2;"
+			manufacturer=		""
+			class=				"Raptor"
+			type=				""
+			score=				"675"
+			techOrder=			"mech"
+			rotationCount=		"40"
+			mass=				"220"
+			cargoSpace=			"50"
+			thrust=				"1000"
+			maneuver=			"4"
+			maxSpeed=			"22"
+
+			leavesWreck=		"50"
+
+			attributes=			"bgalactica,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="315" span="90" armorID="&itCeralloyArmor;" areaSet="0,2" />
+			<ArmorSection start="225" span="90" armorID="&itCeralloyArmor;" areaSet="3,4" />
+			<ArmorSection start="135" span="90" armorID="&itCeralloyArmor;" areaSet="1,6" />
+			<ArmorSection start="45"  span="90" armorID="&itCeralloyArmor;" areaSet="7,13" />
+			</Armor>
+
+		<Devices>
+			<Device deviceID="&itDragonflyMissileSystem;"/>
+			<Device deviceID="&itMAGLauncher;" secondaryWeapon="true" minFireArc="330" maxFireArc="30" posAngle="0" posRadius="16"/>
+			
+			</Devices>
+
+		<Items>
+			<Item count="20d6" item="&itDragonflyCartridge;"/>
+			<Item count="20d6" item="&it800HexageneMAG;"/>
+			<Item count="2d6" item="&itHeliumAssembly;"/>
+			</Items>
+
+		<Image imageID="&rsShips48;" imageX="144" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"25"
+			fireAccuracy=		"85"
+			perception=			"4"
+			/>
+
+		<DriveImages>
+			<NozzleImage imageID="&rsDriveExhaust;" imageX="48" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+			<NozzlePos x="-42" y="5"/>
+			<NozzlePos x="-42" y="-5"/>
+			</DriveImages>
+
+		</ShipClass>
+		
+		<ShipClass UNID="&scViper;"
+		manufacturer=		""
+		class=				"Viper MK2"
+		type=				"gunship"
+		score=				"225"
+		techOrder=			"biomech"
+rotationCount=		"40"
+		mass=				"20"
+		cargoSpace=			"35"
+		thrust=				"200"
+		maneuver=			"3"
+		maxSpeed=			"25"
+
+		leavesWreck=		"20"
+
+		attributes=			"bgalactica,genericClass"
+		>
+
+	<Armor>
+		<ArmorSection start="315" span="90" armorID="&itLightPlasteelPlate;" areaSet="0,2" />
+		<ArmorSection start="225" span="90" armorID="&itLightPlasteelPlate;" areaSet="3,4" />
+		<ArmorSection start="135" span="90" armorID="&itLightPlasteelPlate;" areaSet="1,6" />
+		<ArmorSection start="45"  span="90" armorID="&itLightPlasteelPlate;" areaSet="7,13" />
+	</Armor>
+
+	<Devices>
+		<Device deviceID="&itDualLaserCannon;"/>
+		<Device deviceID="&itNAMIMissileLauncher;"/>
+	
+	</Devices>
+
+	<Items>
+		<Item count="1d6" item="&itHelium3FuelRod;"/>
+		<Item count="4d6" item="&itKM100Missile;"/>
+	</Items>
+
+	<AISettings
+		fireRateAdj=		"30"
+		fireAccuracy=		"90"
+		perception=			"4"
+		/>
+
+	<Image imageID="&rsShips48;" imageX="192" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+	<DriveImages>
+		<NozzleImage imageID="&rsDriveExhaust;" imageX="48" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+		<NozzlePos x="-41" y="-8"/>
+		<NozzlePos x="-41" y="0"/>
+		<NozzlePos x="-41" y="8"/>
+	</DriveImages>
+
+</ShipClass>
+
+<ShipClass UNID="&scViper7;"
+		manufacturer=		""
+		class=				"Viper MK7"
+		type=				"gunship"
+		score=				"225"
+		techOrder=			"biomech"
+rotationCount=		"40"
+		mass=				"30"
+		cargoSpace=			"35"
+		thrust=				"250"
+		maneuver=			"3"
+		maxSpeed=			"25"
+
+		leavesWreck=		"20"
+
+		attributes=			"bgalactica,genericClass"
+		>
+
+	<Armor>
+		<ArmorSection start="315" span="90" armorID="&itLightPlasteelPlate;" areaSet="0,2" />
+		<ArmorSection start="225" span="90" armorID="&itLightPlasteelPlate;" areaSet="3,4" />
+		<ArmorSection start="135" span="90" armorID="&itLightPlasteelPlate;" areaSet="1,6" />
+		<ArmorSection start="45"  span="90" armorID="&itLightPlasteelPlate;" areaSet="7,13" />
+	</Armor>
+
+	<Devices>
+		<Device deviceID="&itDualLaserCannon;"/>
+		<Device deviceID="&itNAMIMissileLauncher;"/>
+		
+	</Devices>
+
+	<Items>
+		<Item count="1d6" item="&itHelium3FuelRod;"/>
+		<Item count="4d6" item="&itKM100Missile;"/>
+	</Items>
+
+	<AISettings
+		fireRateAdj=		"30"
+		fireAccuracy=		"90"
+		perception=			"4"
+		/>
+
+	<Image imageID="&rsShips48;" imageX="240" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+	<DriveImages>
+		<NozzleImage imageID="&rsDriveExhaust;" imageX="48" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+		<NozzlePos x="-41" y="-8"/>
+		<NozzlePos x="-41" y="0"/>
+		<NozzlePos x="-41" y="8"/>
+	</DriveImages>
+
+</ShipClass>
+	
+<ShipClass UNID="&scBomber;"
+		manufacturer=		""
+		class=				"Bomber"
+		type=				"gunship"
+		score=				"225"
+		techOrder=			"biomech"
+rotationCount=		"40"
+		mass=				"50"
+		cargoSpace=			"55"
+		thrust=				"200"
+		maneuver=			"4"
+		maxSpeed=			"25"
+
+		leavesWreck=		"20"
+
+		attributes=			"bgalactica,genericClass"
+		>
+
+	<Armor>
+		<ArmorSection start="315" span="90" armorID="&itLightPlasteelPlate;" areaSet="0,2" />
+		<ArmorSection start="225" span="90" armorID="&itLightPlasteelPlate;" areaSet="3,4" />
+		<ArmorSection start="135" span="90" armorID="&itLightPlasteelPlate;" areaSet="1,6" />
+		<ArmorSection start="45"  span="90" armorID="&itLightPlasteelPlate;" areaSet="7,13" />
+	</Armor>
+
+	<Devices>
+		<Device deviceID="&itDualLaserCannon;"/>
+		<Device deviceID="&itNAMIMissileLauncher;"/>
+
+	</Devices>
+
+	<Items>
+		<Item count="1d6" item="&itHelium3FuelRod;"/>
+		<Item count="4d6" item="&itKM100Missile;"/>
+	</Items>
+
+	<AISettings
+		fireRateAdj=		"30"
+		fireAccuracy=		"90"
+		perception=			"4"
+		/>
+
+	<Image imageID="&rsShips64;" imageX="0" imageY="0" imageWidth="64" imageHeight="64" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+	<DriveImages>
+		<NozzleImage imageID="&rsDriveExhaust;" imageX="48" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+		<NozzlePos x="-41" y="-8"/>
+		<NozzlePos x="-41" y="0"/>
+		<NozzlePos x="-41" y="8"/>
+	</DriveImages>
+
+</ShipClass>
+
+
+
+<ShipClass UNID="&scColonialOne;"
+		manufacturer=		""
+		class=				"Colonial One"
+		type=				"passenger ship"
+		score=				"245"
+		techOrder=			"mech"
+rotationCount=		"40"
+		mass=				"250"
+		cargoSpace=			"150"
+		thrust=				"200"
+		maneuver=			"6"
+		maxSpeed=			"12"
+
+		leavesWreck=		"75"
+
+		attributes=			"bgalactica,genericClass"
+		>
+
+	<Armor>
+		<ArmorSection start="315" span="90" armorID="&itReactiveArmor;" areaSet="0,2" />
+		<ArmorSection start="225" span="90" armorID="&itReactiveArmor;" areaSet="3,4" />
+		<ArmorSection start="135" span="90" armorID="&itReactiveArmor;" areaSet="1,6" />
+		<ArmorSection start="45"  span="90" armorID="&itReactiveArmor;" areaSet="7,13" />
+	</Armor>
+
+	<Devices>
+		
+	</Devices>
+
+	<Items>
+		
+	</Items>
+
+	<Image imageID="&rsShips64;" imageX="64" imageY="0" imageWidth="64" imageHeight="64" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+	<AISettings
+		fireRateAdj=		"60"
+		fireAccuracy=		"100"
+		perception=			"4"
+		combatStyle=		"standOff"
+		/>
+
+</ShipClass>
+
+	<ShipClass UNID="&scHeavyRaider;"
+			manufacturer=		"Cylon"
+			class=				"Heavy Raider"
+			type=				""
+			score=				"675"
+			techOrder=			"mech"
+			rotationCount=		"40"
+			mass=				"220"
+			cargoSpace=			"50"
+			thrust=				"1000"
+			maneuver=			"5"
+			maxSpeed=			"20"
+
+			leavesWreck=		"50"
+
+			attributes=			"bgalactica,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="315" span="90" armorID="&itCeralloyArmor;" areaSet="0,2" />
+			<ArmorSection start="225" span="90" armorID="&itCeralloyArmor;" areaSet="3,4" />
+			<ArmorSection start="135" span="90" armorID="&itCeralloyArmor;" areaSet="1,6" />
+			<ArmorSection start="45"  span="90" armorID="&itCeralloyArmor;" areaSet="7,13" />
+			</Armor>
+
+		<Devices>
+			<Device deviceID="&itDragonflyMissileSystem;"/>
+			<Device deviceID="&itMAGLauncher;" secondaryWeapon="true" minFireArc="330" maxFireArc="30" posAngle="0" posRadius="16"/>
+			
+			</Devices>
+
+		<Items>
+			<Item count="20d6" item="&itDragonflyCartridge;"/>
+			<Item count="20d6" item="&it800HexageneMAG;"/>
+			<Item count="2d6" item="&itHeliumAssembly;"/>
+			</Items>
+
+		<Image imageID="&rsShips64;" imageX="128" imageY="0" imageWidth="64" imageHeight="64" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"25"
+			fireAccuracy=		"85"
+			perception=			"4"
+			/>
+
+		<DriveImages>
+			<NozzleImage imageID="&rsDriveExhaust;" imageX="48" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+			<NozzlePos x="-42" y="5"/>
+			<NozzlePos x="-42" y="-5"/>
+			</DriveImages>
+
+		</ShipClass>
+
+<ShipClass UNID="&scStorageShuttle;"
+			manufacturer=		""
+			class=				"Shuttle"
+			type=				"freighter"
+			score=				"440"
+			techOrder=			"mech"
+		rotationCount=		"40"
+			mass=				"1000"
+			cargoSpace=			"6000"
+			thrust=				"600"
+			maneuver=			"20"
+			maxSpeed=			"8"
+
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,freighter,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="30" armorID="&itLightPlasteelPlate;" />
+			<ArmorSection start="315" span="30" armorID="&itLightPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="285" span="30" armorID="&itLightPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="255" span="30" armorID="&itLightPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="225" span="30" armorID="&itLightPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="195" span="30" armorID="&itLightPlasteelPlate;" />
+			<ArmorSection start="165" span="30" armorID="&itLightPlasteelPlate;" />
+			<ArmorSection start="135" span="30" armorID="&itLightPlasteelPlate;" />
+			<ArmorSection start="105" span="30" armorID="&itLightPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="75"  span="30" armorID="&itLightPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="45"  span="30" armorID="&itLightPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="15"  span="30" armorID="&itLightPlasteelPlate;" nonCritial="general"/>
+		</Armor>
+
+		<Devices>
+			
+		</Devices>
+
+		<Items>
+		</Items>
+
+		<Image imageID="&rsShips64;" imageX="192" imageY="0" imageWidth="64" imageHeight="64" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		
+
+		<AISettings
+			fireRateAdj=		"120"
+			fireAccuracy=		"90"
+			perception=			"4"
+			combatStyle=		"standOff"
+		/>
+		
+		
+
+	</ShipClass>
+
+	<ShipClass UNID="&scGemenonTraveler;"
+			manufacturer=		""
+			class=				"Storage"
+			type=				"freighter"
+			score=				"440"
+			techOrder=			"mech"
+		rotationCount=		"40"
+			mass=				"1000"
+			cargoSpace=			"6000"
+			thrust=				"600"
+			maneuver=			"20"
+			maxSpeed=			"8"
+
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,freighter,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="30" armorID="&itLightPlasteelPlate;" />
+			<ArmorSection start="315" span="30" armorID="&itLightPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="285" span="30" armorID="&itLightPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="255" span="30" armorID="&itLightPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="225" span="30" armorID="&itLightPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="195" span="30" armorID="&itLightPlasteelPlate;" />
+			<ArmorSection start="165" span="30" armorID="&itLightPlasteelPlate;" />
+			<ArmorSection start="135" span="30" armorID="&itLightPlasteelPlate;" />
+			<ArmorSection start="105" span="30" armorID="&itLightPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="75"  span="30" armorID="&itLightPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="45"  span="30" armorID="&itLightPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="15"  span="30" armorID="&itLightPlasteelPlate;" nonCritial="general"/>
+		</Armor>
+
+		<Devices>
+			
+		</Devices>
+
+		<Items>
+		</Items>
+
+		<Image imageID="&rsShips64;" imageX="256" imageY="0" imageWidth="64" imageHeight="64" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<Names noArticle="true">Kimba Huta; Thera Sita; Gemenon Traveler</Names>
+
+		<AISettings
+			fireRateAdj=		"120"
+			fireAccuracy=		"90"
+			perception=			"4"
+			combatStyle=		"standOff"
+		/>
+		
+		
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scPanGalactic1;"
+			manufacturer=		""
+			class=				"Gemon"
+			type=				"spaceliner"
+			score=				"440"
+			techOrder=			"mech"
+		rotationCount=		"40"
+			mass=				"1200"
+			cargoSpace=			"6000"
+			thrust=				"1200"
+			maneuver=			"20"
+			maxSpeed=			"12"
+
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,freighter,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="315" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="285" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="255" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="225" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="195" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="165" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="135" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="105" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="75"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="45"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="15"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+		</Armor>
+
+		<Devices>
+			
+		</Devices>
+
+		<Items>
+		</Items>
+
+		<Image imageID="&rsShips100;" imageX="0" imageY="0" imageWidth="100" imageHeight="100"/>
+
+		<Names noArticle="true"> </Names>
+
+		<AISettings
+			fireRateAdj=		"120"
+			fireAccuracy=		"90"
+			perception=			"4"
+			combatStyle=		"standOff"
+		/>
+
+		
+
+	</ShipClass>
+
+		<ShipClass UNID="&scPanGalactic2;"
+			manufacturer=		""
+			class=				"Sagittarian Spaceways"
+			type=				"spaceliner"
+			score=				"440"
+			techOrder=			"mech"
+		rotationCount=		"40"
+			mass=				"1200"
+			cargoSpace=			"6000"
+			thrust=				"1200"
+			maneuver=			"20"
+			maxSpeed=			"12"
+
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,freighter,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="315" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="285" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="255" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="225" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="195" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="165" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="135" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="105" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="75"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="45"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="15"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+		</Armor>
+
+		<Devices>
+			
+		</Devices>
+
+		<Items>
+		</Items>
+
+		<Image imageID="&rsShips100;" imageX="100" imageY="0" imageWidth="100" imageHeight="100"/>
+
+		<Names noArticle="true"> </Names>
+
+		<AISettings
+			fireRateAdj=		"120"
+			fireAccuracy=		"90"
+			perception=			"4"
+			combatStyle=		"standOff"
+		/>
+
+		
+
+	</ShipClass>
+	
+		<ShipClass UNID="&scPanGalactic3;"
+			manufacturer=		""
+			class=				"Saggittarion"
+			type=				"spaceliner"
+			score=				"440"
+			techOrder=			"mech"
+		rotationCount=		"40"
+			mass=				"1200"
+			cargoSpace=			"6000"
+			thrust=				"1200"
+			maneuver=			"20"
+			maxSpeed=			"12"
+
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,freighter,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="315" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="285" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="255" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="225" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="195" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="165" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="135" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="105" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="75"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="45"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="15"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+		</Armor>
+
+		<Devices>
+			
+		</Devices>
+
+		<Items>
+		</Items>
+
+		<Image imageID="&rsShips100;" imageX="200" imageY="0" imageWidth="100" imageHeight="100"/>
+
+		<Names noArticle="true"> </Names>
+
+		<AISettings
+			fireRateAdj=		"120"
+			fireAccuracy=		"90"
+			perception=			"4"
+			combatStyle=		"standOff"
+		/>
+
+		
+
+	</ShipClass>
+	
+		<ShipClass UNID="&scPanGalactic4;"
+			manufacturer=		""
+			class=				"Pan Galactic"
+			type=				"spaceliner"
+			score=				"440"
+			techOrder=			"mech"
+		rotationCount=		"40"
+			mass=				"1200"
+			cargoSpace=			"6000"
+			thrust=				"1200"
+			maneuver=			"20"
+			maxSpeed=			"12"
+
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,freighter,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="315" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="285" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="255" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="225" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="195" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="165" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="135" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="105" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="75"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="45"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="15"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+		</Armor>
+
+		<Devices>
+			
+		</Devices>
+
+		<Items>
+		</Items>
+
+		<Image imageID="&rsShips100;" imageX="300" imageY="0" imageWidth="100" imageHeight="100"/>
+
+		<Names noArticle="true"> </Names>
+
+		<AISettings
+			fireRateAdj=		"120"
+			fireAccuracy=		"90"
+			perception=			"4"
+			combatStyle=		"standOff"
+		/>
+
+		
+
+	</ShipClass>
+		<ShipClass UNID="&scPanGalactic5;"
+			manufacturer=		""
+			class=				"Caprica"
+			type=				"spaceliner"
+			score=				"440"
+			techOrder=			"mech"
+		rotationCount=		"40"
+			mass=				"1200"
+			cargoSpace=			"6000"
+			thrust=				"1200"
+			maneuver=			"20"
+			maxSpeed=			"12"
+
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,freighter,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="315" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="285" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="255" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="225" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="195" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="165" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="135" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="105" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="75"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="45"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="15"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+		</Armor>
+
+		<Devices>
+			
+		</Devices>
+
+		<Items>
+		</Items>
+
+		<Image imageID="&rsShips100;" imageX="400" imageY="0" imageWidth="100" imageHeight="100"/>
+
+		<Names noArticle="true"> </Names>
+
+		<AISettings
+			fireRateAdj=		"120"
+			fireAccuracy=		"90"
+			perception=			"4"
+			combatStyle=		"standOff"
+		/>
+
+		
+
+	</ShipClass>
+		<ShipClass UNID="&scOlympicCarrier;"
+			manufacturer=		""
+			class=				"Olympic Carrier"
+			type=				"spaceliner"
+			score=				"440"
+			techOrder=			"mech"
+		rotationCount=		"40"
+			mass=				"1200"
+			cargoSpace=			"6000"
+			thrust=				"1200"
+			maneuver=			"20"
+			maxSpeed=			"12"
+
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,freighter,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="315" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="285" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="255" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="225" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="195" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="165" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="135" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="105" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="75"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="45"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="15"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+		</Armor>
+
+		<Devices>
+			
+		</Devices>
+
+		<Items>
+		</Items>
+
+		<Image imageID="&rsShips100;" imageX="500" imageY="0" imageWidth="100" imageHeight="100"/>
+
+		<Names noArticle="true">Olympic Carrier</Names>
+
+		<AISettings
+			fireRateAdj=		"120"
+			fireAccuracy=		"90"
+			perception=			"4"
+			combatStyle=		"standOff"
+		/>
+
+	
+	</ShipClass>
+	
+		<ShipClass UNID="&scFlatTop;"
+			manufacturer=		""
+			class=				"Flat Top"
+			type=				"repair ship"
+			score=				"440"
+			techOrder=			"mech"
+		rotationCount=		"40"
+			mass=				"1200"
+			cargoSpace=			"6000"
+			thrust=				"1200"
+			maneuver=			"20"
+			maxSpeed=			"12"
+
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,freighter,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="315" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="285" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="255" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="225" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="195" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="165" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="135" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="105" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="75"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="45"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="15"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+		</Armor>
+
+		<Devices>
+			
+		</Devices>
+
+		<Items>
+		</Items>
+
+		<Image imageID="&rsShips100;" imageX="600" imageY="0" imageWidth="100" imageHeight="100"/>
+
+		<Names noArticle="true">Virgon Express; Carina; Hephastos</Names>
+
+		<AISettings
+			fireRateAdj=		"120"
+			fireAccuracy=		"90"
+			perception=			"4"
+			combatStyle=		"standOff"
+		/>
+
+	
+	</ShipClass>
+	
+	<ShipClass UNID="&scGeminiFreighter;"
+			manufacturer=		""
+			class=				"Gemini"
+			type=				"freighter"
+			score=				"440"
+			techOrder=			"mech"
+		rotationCount=		"40"
+			mass=				"1200"
+			cargoSpace=			"6000"
+			thrust=				"1200"
+			maneuver=			"20"
+			maxSpeed=			"12"
+
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,freighter,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="315" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="285" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="255" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="225" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="195" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="165" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="135" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="105" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="75"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="45"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="15"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+		</Armor>
+
+		<Devices>
+			
+		</Devices>
+
+		<Items>
+		</Items>
+
+		<Image imageID="&rsShips100;" imageX="700" imageY="0" imageWidth="100" imageHeight="100"/>
+
+		<Names noArticle="true"></Names>
+
+		<AISettings
+			fireRateAdj=		"120"
+			fireAccuracy=		"90"
+			perception=			"4"
+			combatStyle=		"standOff"
+		/>
+
+	
+	</ShipClass>
+	
+	<ShipClass UNID="&scColonialMovers;"
+			manufacturer=		""
+			class=				"Colonial Movers"
+			type=				"freighter"
+			score=				"440"
+			techOrder=			"mech"
+		rotationCount=		"40"
+			mass=				"1200"
+			cargoSpace=			"6000"
+			thrust=				"1200"
+			maneuver=			"20"
+			maxSpeed=			"12"
+
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,freighter,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="315" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="285" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="255" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="225" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="195" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="165" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="135" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="105" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="75"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="45"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="15"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+		</Armor>
+
+		<Devices>
+			
+		</Devices>
+
+		<Items>
+		</Items>
+
+		<Image imageID="&rsShips100;" imageX="800" imageY="0" imageWidth="100" imageHeight="100"/>
+
+		<Names noArticle="true"></Names>
+
+		<AISettings
+			fireRateAdj=		"120"
+			fireAccuracy=		"90"
+			perception=			"4"
+			combatStyle=		"standOff"
+		/>
+
+	
+	</ShipClass>
+	
+	<ShipClass UNID="&scPylonShip;"
+			manufacturer=		""
+			class=				"Pylon"
+			type=				"fuel tanker"
+			score=				"440"
+			techOrder=			"mech"
+		rotationCount=		"40"
+			mass=				"1200"
+			cargoSpace=			"6000"
+			thrust=				"1200"
+			maneuver=			"20"
+			maxSpeed=			"12"
+
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,freighter,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="315" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="285" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="255" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="225" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="195" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="165" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="135" span="30" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="105" span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="75"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="45"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+			<ArmorSection start="15"  span="30" armorID="&itPlasteelPlate;" nonCritial="general"/>
+		</Armor>
+
+		<Devices>
+			
+		</Devices>
+
+		<Items>
+		</Items>
+
+		<Image imageID="&rsShips100;" imageX="900" imageY="0" imageWidth="100" imageHeight="100"/>
+
+		<Names noArticle="true"></Names>
+
+		<AISettings
+			fireRateAdj=		"120"
+			fireAccuracy=		"90"
+			perception=			"4"
+			combatStyle=		"standOff"
+		/>
+
+	
+	</ShipClass>
+	
+	<ShipClass UNID="&scAstralQueen;"
+			manufacturer=		""
+			class=				"Astral Queen"
+			type=				"prison ship"
+			score=				"440"
+			techOrder=			"mech"
+		rotationCount=		"40"
+			mass=				"2000"
+			cargoSpace=			"10000"
+			thrust=				"1200"
+			maneuver=			"20"
+			maxSpeed=			"8"
+
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,freighter,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="330" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="315" span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="300" span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="285" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="270" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="255" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="240" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="225" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="210" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="195" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="180" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+
+			<ArmorSection start="165" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="150" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="135" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="120" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="105" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="90"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="75"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="60"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="45"  span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="30"  span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="15"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="0"   span="15" armorID="&itPlasteelPlate;" />
+		</Armor>
+
+		<Devices>
+			
+		</Devices>
+
+		<Items>
+		</Items>
+
+		<Image imageID="&rsShips120;" imageX="0" imageY="0" imageWidth="120" imageHeight="120"/>
+
+		<Names noArticle="true">Astral Queen</Names>
+
+		<AISettings
+			fireRateAdj=		"120"
+			fireAccuracy=		"90"
+			perception=			"4"
+			combatStyle=		"standOff"
+		/>
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scCelestra;"
+			manufacturer=		""
+			class=				"Celestra"
+			type=				"research ship"
+			score=				"440"
+			techOrder=			"mech"
+		rotationCount=		"40"
+			mass=				"2000"
+			cargoSpace=			"10000"
+			thrust=				"1200"
+			maneuver=			"20"
+			maxSpeed=			"8"
+
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,freighter,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="330" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="315" span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="300" span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="285" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="270" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="255" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="240" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="225" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="210" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="195" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="180" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+
+			<ArmorSection start="165" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="150" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="135" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="120" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="105" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="90"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="75"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="60"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="45"  span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="30"  span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="15"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="0"   span="15" armorID="&itPlasteelPlate;" />
+		</Armor>
+
+		<Devices>
+			
+		</Devices>
+
+		<Items>
+		</Items>
+
+		<Image imageID="&rsShips120;" imageX="120" imageY="0" imageWidth="120" imageHeight="120"/>
+
+		<Names noArticle="true">Celestra; Striker</Names>
+
+		<AISettings
+			fireRateAdj=		"120"
+			fireAccuracy=		"90"
+			perception=			"4"
+			combatStyle=		"standOff"
+		/>
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scRefineryShip;"
+			manufacturer=		""
+			class=				"Refinery"
+			type=				"refinery ship"
+			score=				"440"
+			techOrder=			"mech"
+		rotationCount=		"40"
+			mass=				"2000"
+			cargoSpace=			"10000"
+			thrust=				"1200"
+			maneuver=			"20"
+			maxSpeed=			"8"
+
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,freighter,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="330" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="315" span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="300" span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="285" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="270" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="255" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="240" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="225" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="210" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="195" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="180" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+
+			<ArmorSection start="165" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="150" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="135" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="120" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="105" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="90"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="75"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="60"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="45"  span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="30"  span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="15"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="0"   span="15" armorID="&itPlasteelPlate;" />
+		</Armor>
+
+		<Devices>
+			
+		</Devices>
+
+		<Items>
+		</Items>
+
+		<Image imageID="&rsShips120;" imageX="240" imageY="0" imageWidth="120" imageHeight="120"/>
+
+		<Names noArticle="true">Daru Mozu; Hitei Kan</Names>
+
+		<AISettings
+			fireRateAdj=		"120"
+			fireAccuracy=		"90"
+			perception=			"4"
+			combatStyle=		"standOff"
+		/>
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scTubeShip;"
+			manufacturer=		""
+			class=				"Tube"
+			type=				"resupply ship"
+			score=				"440"
+			techOrder=			"mech"
+		rotationCount=		"40"
+			mass=				"2000"
+			cargoSpace=			"10000"
+			thrust=				"1200"
+			maneuver=			"20"
+			maxSpeed=			"8"
+
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,freighter,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="330" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="315" span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="300" span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="285" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="270" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="255" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="240" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="225" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="210" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="195" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="180" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+
+			<ArmorSection start="165" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="150" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="135" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="120" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="105" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="90"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="75"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="60"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="45"  span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="30"  span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="15"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="0"   span="15" armorID="&itPlasteelPlate;" />
+		</Armor>
+
+		<Devices>
+			
+		</Devices>
+
+		<Items>
+		</Items>
+
+		<Image imageID="&rsShips120;" imageX="360" imageY="0" imageWidth="120" imageHeight="120"/>
+
+		<Names noArticle="true"></Names>
+
+		<AISettings
+			fireRateAdj=		"120"
+			fireAccuracy=		"90"
+			perception=			"4"
+			combatStyle=		"standOff"
+		/>
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scBotanicalShip;"
+			manufacturer=		""
+			class=				""
+			type=				"botanical ship"
+			score=				"440"
+			techOrder=			"mech"
+		rotationCount=		"40"
+			mass=				"2000"
+			cargoSpace=			"10000"
+			thrust=				"1200"
+			maneuver=			"22"
+			maxSpeed=			"8"
+
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,freighter,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="330" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="315" span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="300" span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="285" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="270" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="255" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="240" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="225" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="210" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="195" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="180" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+
+			<ArmorSection start="165" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="150" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="135" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="120" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="105" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="90"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="75"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="60"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="45"  span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="30"  span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="15"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="0"   span="15" armorID="&itPlasteelPlate;" />
+		</Armor>
+
+		<Devices>
+			
+		</Devices>
+
+		<Items>
+		</Items>
+
+		<Image imageID="&rsShips160;" imageX="0" imageY="0" imageWidth="160" imageHeight="160"/>
+
+		<Names noArticle="true"></Names>
+
+		<AISettings
+			fireRateAdj=		"120"
+			fireAccuracy=		"90"
+			perception=			"4"
+			combatStyle=		"standOff"
+		/>
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scDefender;"
+			manufacturer=		""
+			class=				"Defender"
+			type=				"warship"
+			score=				"2135"
+			techOrder=			"biomech"
+			rotationCount=		"40"
+			mass=				"8000"
+			cargoSpace=			"1000"
+			thrust=				"8000"
+			maneuver=			"6"
+			maxSpeed=			"12"
+
+			explosionType=		"&vtThermoExplosion1;"
+			leavesWreck=		"90"
+
+			attributes=			"bgalactica,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="348"  span="24" armorID="&itHeavyTharsisPlate;" />
+			<ArmorSection start="324"  span="24" armorID="&itHeavyTharsisPlate;" />
+			<ArmorSection start="300"  span="24" armorID="&itHeavyTharsisPlate;" />
+			<ArmorSection start="276"  span="24" armorID="&itHeavyTharsisPlate;" />
+			<ArmorSection start="252"  span="24" armorID="&itHeavyTharsisPlate;" />
+			<ArmorSection start="228" span="24" armorID="&itHeavyTharsisPlate;" />
+			<ArmorSection start="204" span="24" armorID="&itHeavyTharsisPlate;" />
+			<ArmorSection start="180" span="24" armorID="&itHeavyTharsisPlate;" />
+			<ArmorSection start="156" span="24" armorID="&itHeavyTharsisPlate;" />
+			<ArmorSection start="132" span="24" armorID="&itHeavyTharsisPlate;" />
+			<ArmorSection start="108" span="24" armorID="&itHeavyTharsisPlate;" />
+			<ArmorSection start="84"  span="24" armorID="&itHeavyTharsisPlate;" />
+			<ArmorSection start="60"  span="24" armorID="&itHeavyTharsisPlate;" />
+			<ArmorSection start="36"  span="24" armorID="&itHeavyTharsisPlate;" />
+			<ArmorSection start="12"  span="24" armorID="&itHeavyTharsisPlate;" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itHecatesCannon;" posAngle="0" posRadius="50"/>
+			<Device deviceID="&itLightningTurret;" secondaryWeapon="true"/>
+		
+			
+		</Devices>
+
+		<Items>
+			
+		</Items>
+
+		<Image imageID="&rsShips160;" imageX="160" imageY="0" imageWidth="160" imageHeight="160"/>
+
+		<AISettings
+			fireRateAdj=		"10"
+			fireAccuracy=		"90"
+			perception=			"6"
+			/>
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scMiningShip;"
+			manufacturer=		""
+			class=				"Majahual"
+			type=				"mining ship"
+			score=				"440"
+			techOrder=			"mech"
+		rotationCount=		"40"
+			mass=				"2000"
+			cargoSpace=			"10000"
+			thrust=				"1200"
+			maneuver=			"22"
+			maxSpeed=			"8"
+
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,freighter,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="330" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="315" span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="300" span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="285" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="270" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="255" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="240" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="225" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="210" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="195" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="180" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+
+			<ArmorSection start="165" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="150" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="135" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="120" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="105" span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="90"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="75"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="60"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="45"  span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="30"  span="15" armorID="&itPlasteelPlate;" />
+			<ArmorSection start="15"  span="15" armorID="&itPlasteelPlate;" nonCritical="general"/>
+			<ArmorSection start="0"   span="15" armorID="&itPlasteelPlate;" />
+		</Armor>
+
+		<Devices>
+			
+		</Devices>
+
+		<Items>
+		</Items>
+
+		<Image imageID="&rsShips160;" imageX="320" imageY="0" imageWidth="160" imageHeight="160"/>
+
+		<Names noArticle="true">Majahual, Monarch</Names>
+
+		<AISettings
+			fireRateAdj=		"120"
+			fireAccuracy=		"90"
+			perception=			"4"
+			combatStyle=		"standOff"
+		/>
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scGalactica;"
+			manufacturer=		""
+			class=				"Galactica"
+			type=				"battlestar"
+			score=				"3140"
+			techOrder=			"mech"
+			rotationCount=		"40"
+			mass=				"15000"
+			cargoSpace=			"5000"
+			thrust=				"10000"
+			maneuver=			"10"
+			maxSpeed=			"16"
+
+			reactorPower=			"100000"
+			fuelCapacity=			"17750000"
+			maxFuelTech=			"20"
+			minFuelTech=			"1"
+			
+			maxArmor=			"6000"
+			maxCargoSpace=		"150"
+			maxDevices=			"7"
+			
+			cyberDefenseLevel=	"8"
+			explosionType=		"&vtThermoExplosion3;"
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="330" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="315" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="300" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="285" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="270" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="255" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="240" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="225" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="210" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="195" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="180" span="15" armorID="&itMassiveTharsisPlate;" />
+
+			<ArmorSection start="165" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="150" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="135" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="120" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="105" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="90"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="75"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="60"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="45"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="30"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="15"  span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="0"   span="15" armorID="&itMassiveTharsisPlate;" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itAresPlasmaCannon;" posAngle="0" posRadius="100"/>
+			<Device deviceID="&itLightningTurret;" secondaryWeapon="true" posAngle="0" posRadius="20"/>
+			<Device deviceID="&itLightningTurret;" secondaryWeapon="true" posAngle="180" posRadius="80"/>
+			
+		</Devices>
+
+		<Image imageID="&rsShips192;" imageX="0" imageY="0" imageWidth="192" imageHeight="192" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<Items>
+			
+		</Items>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"95"
+			perception=			"6"
+			/>
+			
+			<PlayerSettings
+			desc=				"The Battlestar Galactica is the last hope to humanity survival."
+			
+			initialClass=		"true"
+			startingCredits=	"10d100+1000"
+			
+			startingSystem=		"SE"
+			startingPos=		"Start"
+			>
+
+			<ArmorDisplay>
+				<ArmorSection name="forward"
+						imageID="&rsArmour;" 
+						imageX="0" imageY="0" imageWidth="52" imageHeight="5"
+						destX="42" destY="32" hpX="55" hpY="27"
+						nameY="0" nameBreakWidth="360" nameDestX="12" nameDestY="0" />
+
+				<ArmorSection name="forward (non-critical)"
+						imageID="&rsArmour;" 
+						imageX="50" imageY="0" imageWidth="52" imageHeight="5"
+						destX="42" destY="27" hpX="55" hpY="27"
+						nameY="0" nameBreakWidth="360" nameDestX="12" nameDestY="0" />
+
+				<ArmorSection name="front starboard"
+						imageID="&rsArmour;" 
+						imageX="87" imageY="0" imageWidth="5" imageHeight="25"
+						destX="104" destY="41" hpX="98" hpY="46"
+						nameY="22" nameBreakWidth="275" nameDestX="0" nameDestY="8" />
+
+				<ArmorSection name="front starboard (non-critial)"
+						imageID="&rsArmour;" 
+						imageX="87" imageY="125" imageWidth="5" imageHeight="25"
+						destX="104" destY="41" hpX="98" hpY="46"
+						nameY="22" nameBreakWidth="275" nameDestX="0" nameDestY="8" />
+					
+				<ArmorSection name="aft starboard"
+						imageID="&rsArmour;" 
+						imageX="77" imageY="0" imageWidth="5" imageHeight="25"
+						destX="104" destY="69" hpX="98" hpY="74"
+						nameY="44" nameBreakWidth="275" nameDestX="0" nameDestY="8" />	
+
+				<ArmorSection name="aft starboard (non-critical)"
+						imageID="&rsArmour;" 
+						imageX="77" imageY="125" imageWidth="5" imageHeight="25"
+						destX="104" destY="69" hpX="98" hpY="74"
+						nameY="44" nameBreakWidth="275" nameDestX="0" nameDestY="8" />	
+
+				<ArmorSection name="aft"
+						imageID="&rsArmour;" 
+						imageX="0" imageY="25" imageWidth="52" imageHeight="5"
+						destX="42" destY="97" hpX="55" hpY="97"
+						nameY="66" nameBreakWidth="200" nameDestX="0" nameDestY="8" />
+
+				<ArmorSection name="aft (non-critical)"
+						imageID="&rsArmour;" 
+						imageX="0" imageY="75" imageWidth="52" imageHeight="5"
+						destX="42" destY="97" hpX="55" hpY="97"
+						nameY="66" nameBreakWidth="200" nameDestX="0" nameDestY="8" />
+
+				<ArmorSection name="aft port"
+						imageID="&rsArmour;" 
+						imageX="72" imageY="0" imageWidth="5" imageHeight="25"
+						destX="23" destY="69" hpX="12" hpY="74"
+						nameY="88" nameBreakWidth="200" nameDestX="-0" nameDestY="8" />
+
+				<ArmorSection name="aft port (non-critical)"
+						imageID="&rsArmour;" 
+						imageX="72" imageY="125" imageWidth="5" imageHeight="25"
+						destX="23" destY="69" hpX="12" hpY="74"
+						nameY="88" nameBreakWidth="200" nameDestX="-0" nameDestY="8" />
+
+				<ArmorSection name="front port"
+						imageID="&rsArmour;" 
+						imageX="82" imageY="0" imageWidth="5" imageHeight="25"
+						destX="23" destY="41" hpX="12" hpY="46"
+						nameY="110" nameBreakWidth="200" nameDestX="0" nameDestY="8" />	
+
+				<ArmorSection name="front port"
+						imageID="&rsArmour;" 
+						imageX="82" imageY="125" imageWidth="5" imageHeight="25"
+						destX="23" destY="41" hpX="12" hpY="46"
+						nameY="110" nameBreakWidth="200" nameDestX="0" nameDestY="8" />	
+			</ArmorDisplay>
+
+			<ShieldDisplay>
+				<Image imageID="&rsZubrinShields;" imageX="0" imageY="0" imageWidth="136" imageHeight="136"/>
+			</ShieldDisplay>
+				
+			<ReactorDisplay>
+				<Image imageID="&rsZubrinReactor;" 
+						imageX="0" imageY="0" imageWidth="256" imageHeight="60"/>
+				
+				<PowerLevelImage imageID="&rsZubrinReactor;"
+						imageX="0" imageY="60" imageWidth="202" imageHeight="14"
+						destX="54" destY="9"/>
+						
+				<FuelLevelImage imageID="&rsZubrinReactor;"
+						imageX="0" imageY="74" imageWidth="194" imageHeight="14"
+						destX="54" destY="37"/>
+						
+				<FuelLowLevelImage imageID="&rsZubrinReactor;"
+						imageX="0" imageY="88" imageWidth="194" imageHeight="14"/>
+						
+				<ReactorText x="62" y="22" width="154" height="14"/>
+				<PowerLevelText x="62" y="0" width="154" height="9"/>
+				<FuelLevelText x="62" y="51" width="154" height="9"/>
+			</ReactorDisplay>
+			
+		</PlayerSettings>
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scPegasus;"
+			manufacturer=		""
+			class=				"Pegasus"
+			type=				"battlestar"
+			score=				"3140"
+			techOrder=			"mech"
+			rotationCount=		"40"
+			mass=				"15000"
+			cargoSpace=			"5000"
+			thrust=				"10000"
+			maneuver=			"10"
+			maxSpeed=			"16"
+
+			reactorPower=			"100000"
+			fuelCapacity=			"17750000"
+			maxFuelTech=			"20"
+			minFuelTech=			"1"
+			
+			maxArmor=			"6000"
+			maxCargoSpace=		"150"
+			maxDevices=			"7"
+			
+			cyberDefenseLevel=	"8"
+			explosionType=		"&vtThermoExplosion3;"
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="330" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="315" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="300" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="285" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="270" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="255" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="240" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="225" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="210" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="195" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="180" span="15" armorID="&itMassiveTharsisPlate;" />
+
+			<ArmorSection start="165" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="150" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="135" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="120" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="105" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="90"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="75"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="60"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="45"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="30"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="15"  span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="0"   span="15" armorID="&itMassiveTharsisPlate;" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itAresPlasmaCannon;" posAngle="0" posRadius="100"/>
+			<Device deviceID="&itLightningTurret;" secondaryWeapon="true" posAngle="0" posRadius="20"/>
+			<Device deviceID="&itLightningTurret;" secondaryWeapon="true" posAngle="180" posRadius="80"/>
+			
+		</Devices>
+
+		<Image imageID="&rsShips256;" imageX="0" imageY="0" imageWidth="256" imageHeight="256" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<Items>
+			
+		</Items>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"95"
+			perception=			"6"
+			/>
+			
+			
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scBasestarOld;"
+			manufacturer=		"Cylon"
+			class=				""
+			type=				"Basestar"
+			score=				"2415"
+			techOrder=			"mech"
+			rotationCount=		"40"
+			mass=				"50000"
+			cargoSpace=			"25000"
+			thrust=				"50000"
+			maneuver=			"16"
+			maxSpeed=			"6"
+
+			cyberDefenseLevel=	"8"
+
+			explosionType=		"&vtThermoExplosion3;"
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="15" armorID="&itWorldshipArmorPlate;" />
+			<ArmorSection start="330" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="315" span="15" armorID="&itWorldshipArmorPlate;" />
+			<ArmorSection start="300" span="15" armorID="&itWorldshipArmorPlate;" />
+			<ArmorSection start="285" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="270" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="255" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="240" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="225" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="210" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="195" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="180" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+
+			<ArmorSection start="165" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="150" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="135" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="120" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="105" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="90"  span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="75"  span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="60"  span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="45"  span="15" armorID="&itWorldshipArmorPlate;" />
+			<ArmorSection start="30"  span="15" armorID="&itWorldshipArmorPlate;" />
+			<ArmorSection start="15"  span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="0"   span="15" armorID="&itWorldshipArmorPlate;" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itGaianDemolitionCannon;" omnidirectional="true" />
+			<Device deviceID="&itThermoCannon;" secondaryWeapon="true" minFireArc="315" maxFireArc="45" posAngle="0" posRadius="40"/>
+			<Device deviceID="&itThermoCannon;" secondaryWeapon="true" minFireArc="45"  maxFireArc="135" posAngle="90" posRadius="30"/>
+			<Device deviceID="&itThermoCannon;" secondaryWeapon="true" minFireArc="135" maxFireArc="225" posAngle="180" posRadius="40"/>
+			<Device deviceID="&itThermoCannon;" secondaryWeapon="true" minFireArc="225" maxFireArc="315" posAngle="270" posRadius="30"/>
+
+			<Device deviceID="&itMissileDefense;" omnidirectional="true" />
+		</Devices>
+
+		<Items>
+			
+			<Item				count="100"		item="&itThermoCannonShell;"/>
+			
+		</Items>
+
+		<Image imageID="&rsShips192;" imageX="192" imageY="0" imageWidth="192" imageHeight="192" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"30"
+			fireAccuracy=		"90"
+			perception=			"6"
+			combatStyle=		"standOff"
+			/>
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scBasestar;"
+			manufacturer=		"Cylon"
+			class=				""
+			type=				"Basestar"
+			score=				"2415"
+			techOrder=			"mech"
+			rotationCount=		"40"
+			mass=				"50000"
+			cargoSpace=			"25000"
+			thrust=				"50000"
+			maneuver=			"16"
+			maxSpeed=			"6"
+
+			cyberDefenseLevel=	"8"
+
+			explosionType=		"&vtThermoExplosion3;"
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="15" armorID="&itWorldshipArmorPlate;" />
+			<ArmorSection start="330" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="315" span="15" armorID="&itWorldshipArmorPlate;" />
+			<ArmorSection start="300" span="15" armorID="&itWorldshipArmorPlate;" />
+			<ArmorSection start="285" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="270" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="255" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="240" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="225" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="210" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="195" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="180" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+
+			<ArmorSection start="165" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="150" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="135" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="120" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="105" span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="90"  span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="75"  span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="60"  span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="45"  span="15" armorID="&itWorldshipArmorPlate;" />
+			<ArmorSection start="30"  span="15" armorID="&itWorldshipArmorPlate;" />
+			<ArmorSection start="15"  span="15" armorID="&itWorldshipArmorPlate;" nonCritical="general"/>
+			<ArmorSection start="0"   span="15" armorID="&itWorldshipArmorPlate;" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itGaianDemolitionCannon;" omnidirectional="true" />
+			<Device deviceID="&itThermoCannon;" secondaryWeapon="true" minFireArc="315" maxFireArc="45" posAngle="0" posRadius="40"/>
+			<Device deviceID="&itThermoCannon;" secondaryWeapon="true" minFireArc="45"  maxFireArc="135" posAngle="90" posRadius="30"/>
+			<Device deviceID="&itThermoCannon;" secondaryWeapon="true" minFireArc="135" maxFireArc="225" posAngle="180" posRadius="40"/>
+			<Device deviceID="&itThermoCannon;" secondaryWeapon="true" minFireArc="225" maxFireArc="315" posAngle="270" posRadius="30"/>
+
+			<Device deviceID="&itMissileDefense;" omnidirectional="true" />
+		</Devices>
+
+		<Items>
+			
+			<Item				count="100"		item="&itThermoCannonShell;"/>
+			
+		</Items>
+
+		<Image imageID="&rsShips256;" imageX="256" imageY="0" imageWidth="256" imageHeight="256" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"30"
+			fireAccuracy=		"90"
+			perception=			"6"
+			combatStyle=		"standOff"
+			/>
+
+	</ShipClass>
+	
+	
+	
+	<ShipClass UNID="&scZephyr;"
+			manufacturer=		""
+			class=				"Zephyr"
+			type=				"spaceliner"
+			score=				"3140"
+			techOrder=			"mech"
+			rotationCount=		"40"
+			mass=				"15000"
+			cargoSpace=			"5000"
+			thrust=				"10000"
+			maneuver=			"10"
+			maxSpeed=			"16"
+
+			cyberDefenseLevel=	"8"
+			explosionType=		"&vtThermoExplosion1;"
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="330" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="315" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="300" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="285" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="270" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="255" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="240" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="225" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="210" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="195" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="180" span="15" armorID="&itMassiveTharsisPlate;" />
+
+			<ArmorSection start="165" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="150" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="135" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="120" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="105" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="90"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="75"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="60"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="45"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="30"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="15"  span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="0"   span="15" armorID="&itMassiveTharsisPlate;" />
+		</Armor>
+
+		<Devices>
+			
+			
+		</Devices>
+
+		<Image imageID="&rsShips192;" imageX="384" imageY="0" imageWidth="192" imageHeight="192" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<Items>
+			
+		</Items>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"95"
+			perception=			"6"
+			/>
+
+	</ShipClass>
+	
+	
+	<ShipClass UNID="&scCloudNine;"
+			manufacturer=		""
+			class=				"Cloud Nine"
+			type=				"spaceliner"
+			score=				"3140"
+			techOrder=			"mech"
+			rotationCount=		"40"
+			mass=				"15000"
+			cargoSpace=			"5000"
+			thrust=				"10000"
+			maneuver=			"10"
+			maxSpeed=			"16"
+
+			cyberDefenseLevel=	"8"
+			explosionType=		"&vtThermoExplosion1;"
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="330" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="315" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="300" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="285" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="270" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="255" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="240" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="225" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="210" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="195" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="180" span="15" armorID="&itMassiveTharsisPlate;" />
+
+			<ArmorSection start="165" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="150" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="135" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="120" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="105" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="90"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="75"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="60"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="45"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="30"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="15"  span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="0"   span="15" armorID="&itMassiveTharsisPlate;" />
+		</Armor>
+
+		<Devices>
+			
+			
+		</Devices>
+
+		<Image imageID="&rsShips192;" imageX="576" imageY="0" imageWidth="192" imageHeight="192" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<Items>
+			
+		</Items>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"95"
+			perception=			"6"
+			/>
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scResurrectionShip;"
+			manufacturer=		""
+			class=				""
+			type=				"resurrection ship"
+			score=				"3140"
+			techOrder=			"mech"
+			rotationCount=		"40"
+			mass=				"15000"
+			cargoSpace=			"5000"
+			thrust=				"10000"
+			maneuver=			"10"
+			maxSpeed=			"16"
+
+			cyberDefenseLevel=	"8"
+			explosionType=		"&vtThermoExplosion3;"
+			leavesWreck=		"100"
+
+			attributes=			"bgalactica,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="330" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="315" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="300" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="285" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="270" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="255" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="240" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="225" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="210" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="195" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="180" span="15" armorID="&itMassiveTharsisPlate;" />
+
+			<ArmorSection start="165" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="150" span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="135" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="120" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="105" span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="90"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="75"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="60"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="45"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="30"  span="15" armorID="&itMassiveTharsisPlate;" nonCritical="general"/>
+			<ArmorSection start="15"  span="15" armorID="&itMassiveTharsisPlate;" />
+			<ArmorSection start="0"   span="15" armorID="&itMassiveTharsisPlate;" />
+		</Armor>
+
+		<Devices>
+			
+			
+		</Devices>
+
+		<Image imageID="&rsShips256;" imageX="512" imageY="0" imageWidth="256" imageHeight="256" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<Items>
+			
+		</Items>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"95"
+			perception=			"6"
+			/>
+
+	</ShipClass>
+	
+	<Globals>
+	(block Nil
+	(setq galacticafleet (lambda Nil
+                      
+(block (fleetlist)
+ 
+    (setq fleetlist (list 0xD25CEE0B 0xD25CEE0C 0xD25CEE0D 0xD25CEE0E 0xD25CEE0F 0xD25CEE10 0xD25CEE11 0xD25CEE12 0xD25CEE13 0xD25CEE14 0xD25CEE15 0xD25CEE16 0xD25CEE17 0xD25CEE18 0xD25CEE19 0xD25CEE1A 0xD25CEE1B 0xD25CEE1C 0xD25CEE1D 0xD25CEE1E 0xD25CEE1F 0xD25CEE20 0xD25CEE21 0xD25CEE22 0xD25CEE23 0xD25CEE24 0xD25CEE25 0xD25CEE26 0xD25CEE29 0xD25CEE2A 0xD25CEE2B 0xD25CEE2C 0xD25CEE2D))
+ 
+    ; (for i 1 30
+    ;  (block (temporaryNumber)
+    ;   (setq temporaryNumber 0xD25CEE0B)
+    ;   (setq fleetlist (Append fleetlist temporaryNumber))
+    ;   (setq temporaryNumber (add temporaryNumber i))
+    ;   )
+    ;  )
+       
+    (enum fleetlist theEnumShip
+     (block (temporaryship)
+     (setq temporaryship (sysCreateShip theEnumShip (ObjGetPos gPlayership) &svFriendlyAuton; "auton"))
+     
+
+    ; Escort ship
+    (shpOrderEscort temporaryship gPlayership)
+    ))
+   
+)))
+    )
+	</Globals>
+</TranscendenceExtension>
